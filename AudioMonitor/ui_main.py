@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file './ui_main.ui'
 #
-# Created: Tue Apr 17 00:10:43 2018
+# Created: Wed May 23 21:40:36 2018
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -112,6 +112,9 @@ class Ui_MainWindow(object):
         self.progressBar.setProperty("value", -1)
         self.progressBar.setObjectName(_fromUtf8("progressBar"))
         self.verticalLayout_2.addWidget(self.progressBar)
+        self.labelDetection = QtGui.QLabel(self.centralwidget)
+        self.labelDetection.setObjectName(_fromUtf8("labelDetection"))
+        self.verticalLayout_2.addWidget(self.labelDetection)
         spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem)
         self.verticalLayout_2.setStretch(3, 1)
@@ -129,6 +132,7 @@ class Ui_MainWindow(object):
         self.LearnSound.setText(_translate("MainWindow", "Learn Sound", None))
         self.LearnNotSound.setText(_translate("MainWindow", "NOT the Sound", None))
         self.Train.setText(_translate("MainWindow", "Train SVM", None))
+        self.labelDetection.setText(_translate("MainWindow", "TextLabel", None))
 
 from pyqtgraph import PlotWidget
 

@@ -88,7 +88,7 @@
      </widget>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,1,0,0">
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,1,0,0,0">
       <property name="spacing">
        <number>0</number>
       </property>
@@ -163,6 +163,13 @@
         </property>
         <property name="value">
          <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelDetection">
+        <property name="text">
+         <string>TextLabel</string>
         </property>
        </widget>
       </item>
