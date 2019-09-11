@@ -100,10 +100,10 @@ class ExampleApp(QtGui.QMainWindow, ui_main.Ui_MainWindow):
         print('b=%s' % (b))
         print('positives:')
         for p in self.learnArrs:
-            print clf.predict(p)
+            print( clf.predict([p]) )
         print('negatives:')
         for p in self.learnNotArrs:
-            print clf.predict(p)
+            print( clf.predict([p]) )
         self.clf = clf
         text, ok = QtGui.QInputDialog.getText(self, 'Input Dialog', 'What did I just detect?')
         if ok:
@@ -160,6 +160,7 @@ class Runner():
                 fft = self.ear.fft
                 fft = scaler.fit_transform(self.ear.fft.reshape(self.ear.fft.shape[0],1))
                 fft = fft.reshape(self.ear.fft.shape[0])#back to simple array
+                fft = np.array([fft])
                 status+=detector.replace('.svm', ' : ')
                 if self.dumps[detector].predict(fft) > 0:
                     status += 'YES'
@@ -169,7 +170,7 @@ class Runner():
             #print('spike near '+str(spikept))
             if self.plotting:
                 self.grFFT.plot(self.ear.fftx,self.ear.fft/self.maxFFT,pen=pen,clear=True)
-                QtCore.QTimer.singleShot(1, self.update) # QUICKLY repeat
+        QtCore.QTimer.singleShot(1, self.update) # QUICKLY repeat
 
 if __name__=="__main__":
     app = QtGui.QApplication(sys.argv)
